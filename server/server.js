@@ -21,7 +21,6 @@ server.use(cookieParser());
 server.use(express.static(path.join(__dirname, "public")));
 
 server.use("/", indexRouter);
-server.use("/users", usersRouter);
 server.use("/weather", weatherRouter);
 
 // catch 404 and forward to error handler
