@@ -3,8 +3,11 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
+require("dotenv").config();
 
 const indexRouter = require("./routes/index");
+const authorizeRouter = require("./routes/authorize");
+const calendarRouter = require("./routes/calendar");
 const weatherRouter = require("./routes/weather");
 
 const server = express();
@@ -20,15 +23,17 @@ server.use(cookieParser());
 server.use(express.static(path.join(__dirname, "public")));
 
 server.use("/", indexRouter);
+server.use("/authorize", authorizeRouter);
+server.use("/calendar", calendarRouter);
 server.use("/weather", weatherRouter);
 
 // catch 404 and forward to error handler
-server.use(function(req, res, next) {
+server.use((req, res, next) => {
   next(createError(404));
 });
 
 // error handler
-server.use(function(err, req, res, next) {
+server.use((err, req, res, next) => {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.server.get("env") === "development" ? err : {};
