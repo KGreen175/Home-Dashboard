@@ -5,7 +5,6 @@ var authHelper = require("../helpers/auth");
 /* GET home page. */
 router.get("/", async function(req, res, next) {
   let parms = { title: "Index", active: { home: true } };
-
   const accessToken = await authHelper.getAccessToken(req.cookies, res);
   const userName = req.cookies.graph_user_name;
 
@@ -17,7 +16,7 @@ router.get("/", async function(req, res, next) {
     console.log(`SignInUrl: ${parms.signInUrl}`);
   }
 
-  res.json(parms);
+  res.json(parms.signInUrl);
 });
 
 module.exports = router;

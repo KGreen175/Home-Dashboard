@@ -1,5 +1,6 @@
 import React from "react";
 import WeatherContainer from "./containers/WeatherContainer";
+import CalendarContainer from "./containers/CalendarContainer";
 import "./App.css";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <WeatherContainer />
+        <CalendarContainer />
       </header>
     </div>
   );
