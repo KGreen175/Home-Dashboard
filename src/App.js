@@ -25,18 +25,16 @@ class App extends Component {
   render() {
     if (this.state.outlookCookie === undefined) {
       return (
-        <div className="App">
-          <header className="App-header">
+        <div className="container">
+          <header className="container-header">
             <LoginContainer login={this.handleLogin} />
           </header>
         </div>
       );
     }
     return (
-      <div className="App">
-        <header className="App-header">
-          <DashBoardContainer />
-        </header>
+      <div className="container">
+        <DashBoardContainer />
       </div>
     );
   }

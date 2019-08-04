@@ -52,7 +52,7 @@ class WeatherContainer extends Component {
     }
 
     return (
-      <div>
+      <div className="card-body text-center">
         <Clock />
         <p>{summary}</p>
         <WeatherIcon icon={icon} />

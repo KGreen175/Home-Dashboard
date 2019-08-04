@@ -6,9 +6,17 @@ import "./DashBoardContainer.css";
 class DashBoardContainer extends Component {
   render() {
     return (
-      <div className="DashBoardContainer">
-        <WeatherContainer className="WeatherContainer" />
-        <CalendarContainer className="CalendarContainer" />
+      <div className="row">
+        <div className="col">
+          <div>
+            <WeatherContainer />
+          </div>
+        </div>
+        <div className="col">
+          <div>
+            <CalendarContainer />
+          </div>
+        </div>
       </div>
     );
   }

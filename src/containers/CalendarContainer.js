@@ -11,24 +11,22 @@ class CalendarContainer extends Component {
   };
 
   async componentDidMount() {
-    // this.setState({ isLoading: true });
+    this.setState({ isLoading: true });
     const calendarData = await calendarService.getCalendarData();
     await this.setState({
       user: calendarData.user,
-      events: calendarData.events,
+      events: calendarData.events.reverse(),
       isLoading: false
     });
-    // this.setState({ isLoading: false });
+    this.setState({ isLoading: false });
   }
 
   render() {
-    const { user, events, isLoading } = this.state;
+    const { events, isLoading } = this.state;
     const listEvents = events.map(event => (
-      <div className="Event" key={event.id}>
-        <li>
-          <h6>{event.subject}</h6>
-          {event.start.dateTime}
-        </li>
+      <div className="Event shadow-nohover" key={event.id}>
+        <h6>{event.subject}</h6>
+        <li>{event.start.dateTime}</li>
       </div>
     ));
 
@@ -36,8 +34,8 @@ class CalendarContainer extends Component {
       return <LoadingSpinner />;
     }
     return (
-      <div>
-        <h3>{user}'s Events Today</h3>
+      <div className="card-body text-center">
+        <h5>This Week's Agenda</h5>
         <ul>{listEvents}</ul>
       </div>
     );

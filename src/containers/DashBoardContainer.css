@@ -1,4 +1,9 @@
 .DashBoardContainer {
   display: flex;
-  justify-content: space-around;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -10,3 +10,7 @@
 .Precipitation {
   display: flex;
 }
+
+.col {
+  padding: 20px;
+}
