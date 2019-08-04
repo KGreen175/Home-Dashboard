@@ -20,7 +20,7 @@ server.use(logger("dev"));
 server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 server.use(cookieParser());
-server.use(express.static(path.join(__dirname, "home_dashboard/build")));
+server.use(express.static(path.join(__dirname, "../build")));
 
 server.use("/login", loginRouter);
 server.use("/authorize", authorizeRouter);
