@@ -14,7 +14,7 @@ router.get("/", async (req, res, next) => {
     try {
       await authHelper.getTokenFromCode(code, res);
       // Redirect to home
-      res.redirect("/");
+      res.redirect("http://localhost:3000/");
     } catch (error) {
       res.json({
         title: "Error",

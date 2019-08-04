@@ -56,9 +56,12 @@ class WeatherContainer extends Component {
         <Clock />
         <p>{summary}</p>
         <WeatherIcon icon={icon} />
-        <div>
-          <Thermometer temperature={temperature} />
-          <Precipitation precipProbability={precipProbability} />
+        <div className="TempRain">
+          <Thermometer className="Thermometer" temperature={temperature} />
+          <Precipitation
+            className="Precipitation"
+            precipProbability={precipProbability}
+          />
         </div>
       </div>
     );

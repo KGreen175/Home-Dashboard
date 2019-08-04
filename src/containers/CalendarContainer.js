@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Button from "react-bootstrap/Button";
 import LoadingSpinner from "../components/Loading/LoadingSpinner";
 import * as calendarService from "../services/calendarService";
 import "./CalendarContainer.css";
@@ -24,8 +23,14 @@ class CalendarContainer extends Component {
 
   render() {
     const { user, events, isLoading } = this.state;
-
-    const listEvents = events.map(event => <li>{event.subject}</li>);
+    const listEvents = events.map(event => (
+      <div className="Event" key={event.id}>
+        <li>
+          <h6>{event.subject}</h6>
+          {event.start.dateTime}
+        </li>
+      </div>
+    ));
 
     if (isLoading) {
       return <LoadingSpinner />;
