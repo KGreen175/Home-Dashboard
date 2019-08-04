@@ -5,8 +5,8 @@ let allWeatherResponse = {};
 export const getWeatherData = async () => {
   try {
     allWeatherResponse = await axios.get("/weather");
-  } catch (err) {
-    console.error(`Exception while getting weather data: ${err}`);
+  } catch (error) {
+    console.error(`Exception while getting weather data: ${error}`);
     return allWeatherResponse;
   }
   return allWeatherResponse;

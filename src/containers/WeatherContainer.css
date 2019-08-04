@@ -1,4 +1,16 @@
-.temperature,
-.rain {
-  display: inline-block;
+.TempRain {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Thermometer {
+  display: flex;
+}
+
+.Precipitation {
+  display: flex;
+}
+
+.col {
+  padding: 20px;
 }
