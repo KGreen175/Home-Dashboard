@@ -20,5 +20,4 @@ const convertDateTimeMoment = async dateTime => {
       convertedDateTime[i].start.dateTime
     ).format("dddd MMM-DD-YYYY hh:mm A");
   }
-  console.log("inside:", convertedDateTime);
 };
