@@ -17,6 +17,9 @@
     "typescript": "3.5.3",
     "weather-icons-react": "1.2.0"
   },
+  "engines": {
+    "node": "^10.15.1"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
